@@ -368,19 +368,60 @@ note_text = "แกไม่รอดแน่"
 font_size = 25
 correct_answer = 0
 
-[node name="Battery" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+[node name="Note29" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.8246495, 0, -0.5656435, 0, 1, 0, 0.5656435, 0, -0.8246495, 11.57677, 1.7903007, -19.086708)
+note_text = "27.“นายเคยกรอกข้อมูลบัตรเครดิตในเว็บแปลก ๆ หรือเปล่า?”
+ก่อนกรอกข้อมูลสำคัญควรดูอะไร?
+A. สัญลักษณ์แม่กุญแจ HTTPS
+B. สีเว็บสวยไหม
+C. มีโฆษณาไหม
+D. มีเพื่อนแชร์ไหม"
+font_size = 25
+
+[node name="Note30" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.9538374, 0, 0.3003229, 0, 1, 0, -0.3003229, 0, -0.9538374, 11.92444, 1.7903007, -18.588848)
+note_text = "27.“นายเคยกรอกข้อมูลบัตรเครดิตในเว็บแปลก ๆ หรือเปล่า?”
+ก่อนกรอกข้อมูลสำคัญควรดูอะไร?
+A. สัญลักษณ์แม่กุญแจ HTTPS
+B. สีเว็บสวยไหม
+C. มีโฆษณาไหม
+D. มีเพื่อนแชร์ไหม"
+font_size = 25
+
+[node name="Note31" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.9805255, 0, 0.19639108, 0, 1, 0, -0.19639108, 0, 0.9805255, 12.736027, 1.7903007, -19.326845)
+note_text = "27.“นายเคยกรอกข้อมูลบัตรเครดิตในเว็บแปลก ๆ หรือเปล่า?”
+ก่อนกรอกข้อมูลสำคัญควรดูอะไร?
+A. สัญลักษณ์แม่กุญแจ HTTPS
+B. สีเว็บสวยไหม
+C. มีโฆษณาไหม
+D. มีเพื่อนแชร์ไหม"
+font_size = 25
+
+[node name="Note32" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.601978, 0, 0.52689904, 0, 0.8, 0, -0.52689904, 0, 0.601978, 15.667742, 1.7846017, -19.156391)
+note_text = "10.“ข้อมูลส่วนตัวของนาย… มันมีค่ากว่าที่คิดนะ”
+ข้อใดคือข้อมูลส่วนบุคคล?
+A. หมายเลขบัตรประชาชน
+B. สีเสื้อที่ใส่วันนี้
+C. งานอดิเรก
+D. ของกินโปรด"
+font_size = 25
+correct_answer = 0
+
+[node name="Battery" parent="." instance=ExtResource("6_csiqh")]
 transform = Transform3D(0.7753304, 0, 0.6315558, 0, 1, 0, -0.6315558, 0, 0.7753304, -6.3219795, 1.060289, -19.345947)
 
-[node name="Battery2" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+[node name="Battery2" parent="." instance=ExtResource("6_csiqh")]
 transform = Transform3D(0.95013005, 0, 0.31185406, 0, 1, 0, -0.31185406, 0, 0.95013005, -6.3219795, 1.060289, -19.19934)
 
-[node name="Battery3" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+[node name="Battery3" parent="." instance=ExtResource("6_csiqh")]
 transform = Transform3D(0.8054948, 0, 0.5926043, 0, 1, 0, -0.5926043, 0, 0.8054948, 3.5163708, 1.008079, -18.837673)
 
-[node name="Battery4" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+[node name="Battery4" parent="." instance=ExtResource("6_csiqh")]
 transform = Transform3D(0.9501308, 0, 0.31185433, 0, 1, 0, -0.31185433, 0, 0.9501308, 7.5668745, 0.5655056, -17.320963)
 
-[node name="Battery5" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+[node name="Battery5" parent="." instance=ExtResource("6_csiqh")]
 transform = Transform3D(0.49471608, 0, 0.8690557, 0, 1, 0, -0.8690557, 0, 0.49471608, 7.7921963, 0.5655056, -17.320963)
 
 [node name="Battery6" parent="." instance=ExtResource("6_csiqh")]
