@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dbvqu8ag7qodk"]
+[gd_scene load_steps=21 format=4 uid="uid://dbvqu8ag7qodk"]
 
 [ext_resource type="Texture2D" uid="uid://cxaoou3wxrqua" path="res://Textures/surface/Metal_04.jpg" id="1_buxxl"]
 [ext_resource type="Script" uid="uid://bckmsxo0qo0m0" path="res://Scene/interact_s/Door/auto_Door.gd" id="1_rqem3"]
@@ -153,10 +153,27 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_rqem3"]
+resource_name = "trigger_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7j13p"]
 _data = {
 &"RESET": SubResource("Animation_7j13p"),
-&"door_open": SubResource("Animation_f5tmn")
+&"door_open": SubResource("Animation_f5tmn"),
+&"trigger_open": SubResource("Animation_rqem3")
 }
 
 [node name="auto_Door" type="Node3D"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=65 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
@@ -34,6 +34,7 @@
 [ext_resource type="Shader" uid="uid://b5xl6rdheqmd1" path="res://Resources/shaders/BurnTransitionShader.gdshader" id="26_i4o1l"]
 [ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/Death_screen.tscn" id="27_755ss"]
 [ext_resource type="Texture2D" uid="uid://daepjxo2bbylh" path="res://Textures/noise/IMG_0208.jpg" id="27_j2n6q"]
+[ext_resource type="Script" uid="uid://bu2ym30dl1pjk" path="res://Player/crt_filter.gd" id="33_c6x0f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -421,7 +422,7 @@ cull_mask = 786431
 [node name="hand" type="Node3D" parent="CameraContainer" groups=["Pickupable"]]
 script = ExtResource("5_n471f")
 battery = 70.0
-battery_drain_rate = 10.0
+battery_drain_rate = 2.5
 battery_bar_path = NodePath("../../player_ui/PlayerUI/BatteryProgressBar")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraContainer/hand"]
@@ -465,6 +466,7 @@ offset_right = 224.0
 offset_bottom = 185.0
 mouse_filter = 2
 script = ExtResource("19_m0h3t")
+time_scale = 3.5
 
 [node name="divider" type="Label" parent="player_ui/PlayerUI/TimeDisplay"]
 layout_mode = 2
@@ -885,6 +887,12 @@ columns = 5
 [node name="Death_screen" parent="player_ui/PlayerUI" instance=ExtResource("27_755ss")]
 visible = false
 
+[node name="task_ui" parent="player_ui/PlayerUI" groups=["task_manager"] instance=ExtResource("8_00tjw")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
 [node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
 material = SubResource("ShaderMaterial_pisgm")
 anchors_preset = 15
@@ -893,13 +901,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="task_ui" parent="player_ui/PlayerUI" groups=["task_manager"] instance=ExtResource("8_00tjw")]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
+script = ExtResource("33_c6x0f")
 
 [node name="pause_menu" parent="player_ui/PlayerUI" instance=ExtResource("10_5htga")]
 visible = false

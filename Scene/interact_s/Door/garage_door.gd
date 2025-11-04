@@ -21,6 +21,20 @@ func toggle_door():
 		$AnimationPlayer.play_backwards("door_open")
 		Door_SFX_close.play()
 		
+func trigger_door():
+	if locked:
+		print("DoorLocked")
+		return
+	opened = !opened
+	if opened:
+		$AnimationPlayer.play("door_open")
+		Door_SFX_open.play()
+		opened = true
+	else:
+		$AnimationPlayer.play_backwards("door_open")
+		Door_SFX_close.play()
+		opened = false
+
 func get_interaction_text() -> String:
 	if locked:
 		return "Locked" #คืนค่าเป็นข้อความ

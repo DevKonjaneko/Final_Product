@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cuiklvlmyu8n6"]
+[gd_scene load_steps=8 format=4 uid="uid://cuiklvlmyu8n6"]
 
 [ext_resource type="Script" uid="uid://cgqpanbtrfjf6" path="res://Inventory/InteractableItem.gd" id="1_q7687"]
 
@@ -6,6 +6,11 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_mvv1i"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvv1i"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 3.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mvv1i"]
 _surfaces = [{
@@ -37,6 +42,7 @@ ItemHighlightMesh = NodePath("MeshInstance3D/Outline")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_mvv1i")
+surface_material_override/0 = SubResource("StandardMaterial3D_mvv1i")
 
 [node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
 visible = false

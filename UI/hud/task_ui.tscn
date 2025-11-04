@@ -40,6 +40,7 @@ text = "Sample text for task"
 text_direction = 2
 
 [node name="DescriptionTextLabel2" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

@@ -42,6 +42,21 @@ func close_door():
 	await $AnimationPlayer.animation_finished
 	sfx_lock.play()
 
+func trigger_door():
+	if locked:
+		print("DoorLocked")
+		sfx_lock.play()
+		return
+	opened = !opened
+	if opened:
+		$AnimationPlayer.play("trigger_open")
+		sound_effect.play()
+		opened = true
+	else:
+		$AnimationPlayer.play_backwards("trigger_open")
+		sound_effect.play()
+		opened = false
+
 #Text_UI
 func get_interaction_text() -> String:
 	if locked:
@@ -49,5 +64,7 @@ func get_interaction_text() -> String:
 	if opened:
 		return "Close Door"
 	return "Open Door"
-	
-	
+
+func unlock_door():
+	locked = false
+	print("Door unlocked")

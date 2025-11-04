@@ -18,9 +18,6 @@ func ai_disable_door(body):
 		opened = false
 		$AnimationPlayer.play_backwards("door_open")
 
-
-
-
 func _ready():
 	if albedo_texture:
 		var new_material = StandardMaterial3D.new()
@@ -36,11 +33,11 @@ func toggle_door():
 		return
 	opened = !opened
 	if opened:
-		$AnimationPlayer.play("door_open")
+		$AnimationPlayer.play("trigger_open")
 		sfx_open.play()
 		opened = true
 	else:
-		$AnimationPlayer.play_backwards("door_open")
+		$AnimationPlayer.play_backwards("trigger_open")
 		sfx_open.play()
 		opened = false
 

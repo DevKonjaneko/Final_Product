@@ -172,7 +172,7 @@ height = 16.933
 radius = 2.866
 height = 21.118
 
-[node name="rabbitNPC" type="CharacterBody3D"]
+[node name="rabbitNPC" type="CharacterBody3D" groups=["Enermy"]]
 script = ExtResource("2_ofsxj")
 
 [node name="metarig_001" type="Node3D" parent="."]
