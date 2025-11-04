@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://bv5els5m7d2s4"]
+
+[ext_resource type="Script" uid="uid://cu6tnkgicglrh" path="res://Scene/interact_s/PP_Standrad.gd" id="1_1yily"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_45n7x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqo64"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_45n7x"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eqo64"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eqo64"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrw46"]
+size = Vector3(0.5, 0.175, 0.5)
+
+[sub_resource type="Animation" id="Animation_hrw46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.125, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eqo64"]
+resource_name = "press"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.125, 0), Vector3(0, 0.014, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6fsq"]
+_data = {
+&"RESET": SubResource("Animation_hrw46"),
+&"press": SubResource("Animation_eqo64")
+}
+
+[node name="FloorButton_standard" type="Node3D"]
+script = ExtResource("1_1yily")
+
+[node name="Button" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.2, 0, 0, 0, 0.75, 0, 0.125, 0)
+mesh = SubResource("BoxMesh_45n7x")
+surface_material_override/0 = SubResource("StandardMaterial3D_eqo64")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Button" groups=["self"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_45n7x")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.225, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_eqo64")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Base" groups=["self"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eqo64")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32061845, 0)
+shape = SubResource("BoxShape3D_hrw46")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b6fsq")
+}
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

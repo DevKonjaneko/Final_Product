@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c2n0klds314xe"]
+
+[ext_resource type="Texture2D" uid="uid://c86du6vcuabkc" path="res://Scene/_main_s/model_house/tex/house_Ceiling.jpg" id="1_kb2mo"]
+
+[resource]
+resource_name = "Ceiling.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_kb2mo")

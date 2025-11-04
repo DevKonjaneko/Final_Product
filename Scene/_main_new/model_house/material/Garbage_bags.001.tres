@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dqmw5ghfsxigy"]
+
+[ext_resource type="Texture2D" uid="uid://cg2btnyfvraay" path="res://Scene/_main_s/model_house/tex/house_Garbage_bags.png" id="1_pw0k8"]
+
+[resource]
+resource_name = "Garbage_bags.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_pw0k8")

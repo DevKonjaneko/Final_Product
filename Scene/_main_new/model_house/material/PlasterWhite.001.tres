@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bb1j54idth1c0"]
+
+[ext_resource type="Texture2D" uid="uid://iwslt41ymy32" path="res://Scene/_main_s/model_house/tex/house_PlasterWhite.jpg" id="1_xouyl"]
+
+[resource]
+resource_name = "PlasterWhite.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_xouyl")

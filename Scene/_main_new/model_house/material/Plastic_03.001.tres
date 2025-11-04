@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://deblai05dpf3j"]
+
+[ext_resource type="Texture2D" uid="uid://j0bfgpsfi7kj" path="res://Scene/_main_s/model_house/tex/house_Plastic_06_151.png" id="1_scry0"]
+
+[resource]
+resource_name = "Plastic_03.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_scry0")

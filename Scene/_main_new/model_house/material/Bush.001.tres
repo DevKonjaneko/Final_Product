@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dlyjr6sg3ddj4"]
+
+[ext_resource type="Texture2D" uid="uid://dt0x08x4xfuaq" path="res://Scene/_main_s/model_house/tex/house_Bush-Bush.png" id="1_ch6js"]
+
+[resource]
+resource_name = "Bush.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_ch6js")

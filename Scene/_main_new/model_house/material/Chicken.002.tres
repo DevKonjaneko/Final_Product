@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c2jw8l016e82f"]
+
+[ext_resource type="Texture2D" uid="uid://0uula3ud2eb0" path="res://Scene/_main_s/model_house/tex/house_Chicken.png" id="1_6f68a"]
+
+[resource]
+resource_name = "Chicken.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_6f68a")

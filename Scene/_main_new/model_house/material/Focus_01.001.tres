@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dw4l3gwecmftt"]
+
+[ext_resource type="Texture2D" uid="uid://bxmjo5v7v3hus" path="res://Scene/_main_s/model_house/tex/house_Focus_01-Focus_01.png" id="1_n4jvl"]
+[ext_resource type="Texture2D" uid="uid://bs3ybdec3noy8" path="res://Scene/_main_s/model_house/tex/house_Focus_01_Emissor.png" id="2_cutfj"]
+
+[resource]
+resource_name = "Focus_01.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_n4jvl")
+emission_enabled = true
+emission_texture = ExtResource("2_cutfj")

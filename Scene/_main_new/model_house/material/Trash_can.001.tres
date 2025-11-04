@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dj5qpsh6wknii"]
+
+[ext_resource type="Texture2D" uid="uid://dqcnoxm30vdem" path="res://Scene/_main_s/model_house/tex/house_Trash_can-Trash_can.png" id="1_wk250"]
+
+[resource]
+resource_name = "Trash_can.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_wk250")

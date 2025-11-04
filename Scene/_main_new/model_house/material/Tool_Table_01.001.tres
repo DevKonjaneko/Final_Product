@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dk6ystfx6dr5a"]
+
+[ext_resource type="Texture2D" uid="uid://cj5li4jxjcunf" path="res://Scene/_main_s/model_house/tex/house_Tool_Table_01.png" id="1_thcru"]
+
+[resource]
+resource_name = "Tool_Table_01.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_thcru")

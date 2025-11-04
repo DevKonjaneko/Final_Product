@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b5cq00ottd2jw"]
+
+[ext_resource type="Texture2D" uid="uid://g1jg15oxggqe" path="res://Scene/_main_s/model_house/tex/house_Refrigerator.png" id="1_rbvg0"]
+
+[resource]
+resource_name = "Refrigerator.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_rbvg0")

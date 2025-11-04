@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bfruu6qfn864v"]
+
+[ext_resource type="Texture2D" uid="uid://c2q5u5bw2idur" path="res://Scene/_main_s/model_house/tex/house_Marble.jpg" id="1_0un2n"]
+
+[resource]
+resource_name = "Marble.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_0un2n")

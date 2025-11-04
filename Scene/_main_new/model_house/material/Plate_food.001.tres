@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b81y2nchhe2fg"]
+
+[ext_resource type="Texture2D" uid="uid://bpvfciul0rgcu" path="res://Scene/_main_s/model_house/tex/house_Plate_food-Plate_food.png" id="1_q15c3"]
+
+[resource]
+resource_name = "Plate_food.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_q15c3")

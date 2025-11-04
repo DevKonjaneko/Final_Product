@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://gjoif4n10sor"]
+
+[ext_resource type="Texture2D" uid="uid://cexd7wci84wpk" path="res://Scene/_main_s/model_house/tex/house_Cupboard_01.png" id="1_g44rd"]
+
+[resource]
+resource_name = "Cupboard_01.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_g44rd")

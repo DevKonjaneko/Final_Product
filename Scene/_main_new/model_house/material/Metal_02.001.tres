@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://3sfmjic67dr2"]
+
+[ext_resource type="Texture2D" uid="uid://r0hxgeqqmaek" path="res://Scene/_main_s/model_house/tex/house_Metal_02.jpg" id="1_1krtv"]
+
+[resource]
+resource_name = "Metal_02.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_1krtv")

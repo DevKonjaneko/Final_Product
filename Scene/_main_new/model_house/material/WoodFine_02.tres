@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6w2t5vtrvhim"]
+
+[ext_resource type="Texture2D" uid="uid://p17s8uiw1ye3" path="res://Scene/_main_s/model_house/tex/house_WoodFine_02.jpg" id="1_qi4dr"]
+
+[resource]
+resource_name = "WoodFine_02"
+cull_mode = 2
+albedo_texture = ExtResource("1_qi4dr")

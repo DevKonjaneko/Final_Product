@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://4241kwhmmnl2"]
+
+[ext_resource type="Texture2D" uid="uid://dc75kejw8kw" path="res://Scene/_main_s/model_house/tex/house_Rake_01-Rake_01.png" id="1_2lo84"]
+
+[resource]
+resource_name = "Rake_01.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_2lo84")

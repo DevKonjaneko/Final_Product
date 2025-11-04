@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7v3dqp0bpog2"]
+
+[ext_resource type="Texture2D" uid="uid://bk0ew1ut8f7ej" path="res://Scene/_main_s/model_house/tex/house_Flower_Table-Flower_Table.png" id="1_r8os3"]
+
+[resource]
+resource_name = "Flower_Table.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_r8os3")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cuhumgs1fosub"]
+
+[ext_resource type="Texture2D" uid="uid://ifu6r14virmx" path="res://Scene/_main_s/model_house/tex/house_Broom_01-Broom_01.png" id="1_c51x2"]
+
+[resource]
+resource_name = "Broom_01.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_c51x2")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2er3inuqkt6h"]
+
+[ext_resource type="Texture2D" uid="uid://bveuvmdro70vx" path="res://Scene/_main_s/model_house/tex/house_Bottle-Bottle.png" id="1_01peu"]
+
+[resource]
+resource_name = "Bottle.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_01peu")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://5gr152q334ch"]
+
+[ext_resource type="Texture2D" uid="uid://cayy12h1seipj" path="res://Scene/_main_s/model_house/tex/house_Electronics.jpg" id="1_0x0mv"]
+
+[resource]
+resource_name = "Electronics.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_0x0mv")

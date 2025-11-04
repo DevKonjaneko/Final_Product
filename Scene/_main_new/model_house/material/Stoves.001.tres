@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://8jek2lclava7"]
+
+[ext_resource type="Texture2D" uid="uid://b4xbdj6vtdjs8" path="res://Scene/_main_s/model_house/tex/house_Stove.jpg" id="1_rqljg"]
+
+[resource]
+resource_name = "Stoves.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_rqljg")

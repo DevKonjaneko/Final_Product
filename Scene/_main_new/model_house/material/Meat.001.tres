@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://8pixmhlu0c2n"]
+
+[ext_resource type="Texture2D" uid="uid://dvtf6gwredu44" path="res://Scene/_main_s/model_house/tex/house_Meat-Meat.png" id="1_vhawg"]
+
+[resource]
+resource_name = "Meat.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_vhawg")

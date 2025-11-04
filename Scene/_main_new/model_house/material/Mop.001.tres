@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://crtaefsv8l1se"]
+
+[ext_resource type="Texture2D" uid="uid://c4rodbsx7b3av" path="res://Scene/_main_s/model_house/tex/house_Mop-Mop.png" id="1_d22y2"]
+
+[resource]
+resource_name = "Mop.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_d22y2")

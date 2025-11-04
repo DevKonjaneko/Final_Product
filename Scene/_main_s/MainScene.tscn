@@ -1,0 +1,488 @@
+[gd_scene load_steps=23 format=3 uid="uid://dit5fjgxvvysf"]
+
+[ext_resource type="PackedScene" uid="uid://bl0h3mi0qhq4f" path="res://Scene/_main_s/Village.tscn" id="1_c6k8p"]
+[ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/player.tscn" id="2_csiqh"]
+[ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Scene/object_s/TestSphere.tscn" id="3_kqf6j"]
+[ext_resource type="PackedScene" uid="uid://r61bfbf25gcy" path="res://Scene/note_s/Note.tscn" id="3_mbwnc"]
+[ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Scene/object_s/TestCube.tscn" id="4_e41yp"]
+[ext_resource type="PackedScene" uid="uid://b76niexsnwx45" path="res://UI/effects/transitionscreen.tscn" id="4_mbwnc"]
+[ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="6_csiqh"]
+[ext_resource type="PackedScene" uid="uid://ckrc1qq74bsae" path="res://Scene/decal_s/photography.tscn" id="9_4bh3e"]
+[ext_resource type="Texture2D" uid="uid://dvnfa3mgd3k8f" path="res://Textures/pictures/Screenshot 2025-10-30 183943.png" id="10_4bh3e"]
+[ext_resource type="Texture2D" uid="uid://bwih8ejk5lx73" path="res://Textures/pictures/Screenshot 2025-10-30 183850.png" id="10_ywl1d"]
+[ext_resource type="Texture2D" uid="uid://djj38f6idwtcx" path="res://Textures/pictures/image3.png" id="11_q41ih"]
+[ext_resource type="PackedScene" uid="uid://dvtycee8q36h6" path="res://Scene/interact_s/Door/standard_Door.tscn" id="12_evdw8"]
+[ext_resource type="PackedScene" uid="uid://bv5els5m7d2s4" path="res://Scene/interact_s/PP_Standrad.tscn" id="12_q41ih"]
+[ext_resource type="PackedScene" uid="uid://ce6px0mhvkp2e" path="res://Scene/note_s/task_trigger.tscn" id="14_555yr"]
+[ext_resource type="PackedScene" uid="uid://cunxuocx31bin" path="res://Scene/interact_s/PP_Contition_Lock.tscn" id="15_tu0td"]
+[ext_resource type="PackedScene" uid="uid://boej7p4abrep2" path="res://enemy/enemy.tscn" id="16_5jovg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdm7g"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_bottom_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 0.1
+
+[sub_resource type="Sky" id="Sky_7yd8q"]
+sky_material = SubResource("ProceduralSkyMaterial_xdm7g")
+
+[sub_resource type="Environment" id="Environment_mtw86"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_7yd8q")
+ambient_light_sky_contribution = 0.3
+ambient_light_energy = 0.4
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.78431374, 0.78431374, 0.78431374, 1)
+volumetric_fog_emission = Color(0.19607843, 0.3137255, 0.47058824, 1)
+volumetric_fog_emission_energy = 0.3
+volumetric_fog_sky_affect = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ywl1d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywl1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q41ih"]
+
+[node name="TestScene" type="Node3D"]
+
+[node name="transitionscreen" parent="." instance=ExtResource("4_mbwnc")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mtw86")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660253, -0.4330129, 0.2500001, 0, 0.49999994, 0.86602545, -0.50000024, 0.74999994, -0.43301257, 0, 22.168022, 0)
+light_energy = 0.25
+shadow_enabled = true
+shadow_bias = 0.05
+directional_shadow_split_1 = 0.05
+directional_shadow_blend_splits = true
+
+[node name="Village" parent="." instance=ExtResource("1_c6k8p")]
+transform = Transform3D(1.7499998, 0, 0, 0, 1.2499998, 0, 0, 0, 1.7499998, 0.002110958, 0, -0.00074338913)
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_csiqh")]
+transform = Transform3D(0.99713516, 0, -0.07564013, 0, 1, 0, 0.07564013, 0, 0.99713516, 10.573081, 1.7671404, -10.154387)
+
+[node name="Note" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-4.370288e-08, -0.9998058, 0.019703379, 0.99999964, -4.371137e-08, -2.319165e-15, 8.612685e-10, 0.019703466, 0.9998055, 5.449088, 2.5229068, -7.418914)
+note_text = "1.… นายเคยคิดบ้างไหม… ก่อนกดลิ้งค์นั้น ? ”
+การกดลิ้งค์จากแหล่งที่ไม่น่าเชื่อถือเรียกว่าอะไร ?
+A. Spam
+B. Phishing 
+C. Bookmark
+D. Shortcut"
+font_size = 25
+
+[node name="Note2" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.111763805, -3.8552184e-08, -0.9937347, -0.99373484, -4.832287e-08, -0.111763775, -4.3711392e-08, 0.9999999, -4.3711378e-08, 6.9958434, 2.556491, -6.497339)
+note_text = "2.ผี ส่งลิ้งค์มา… แต่นายไม่เช็กเลยสินะ…”
+ควรทำอย่างไรก่อนกดลิ้งค์ที่ได้รับจากคนรู้จัก?
+A. กดทันที
+B. ตรวจสอบความถูกต้องของ URL
+C. แชร์ต่อ
+D. เปิดในโหมดลับ"
+font_size = 25
+
+[node name="Note3" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.641976, 1.1527436, -3.2895126)
+note_text = "3.“บนโลกออนไลน์… ไม่ใช่ทุกคนที่เป็นเพื่อนแท้”
+การหลอกให้เผยข้อมูลส่วนตัวเรียกว่าอะไร?
+A. Social Engineering
+B. Coding
+C. Scamming
+D. Sniffing
+"
+font_size = 25
+correct_answer = 0
+
+[node name="Note4" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.8470384, 0, -0.53153175, 0, 1, 0, 0.53153175, 0, -0.8470384, 15.216982, 0.52388215, -6.534294)
+note_text = "4.“นายจำได้ไหม… นายโพสต์ภาพโดยไม่ขออนุญาต”
+การเผยแพร่รูปผู้อื่นโดยไม่ได้รับอนุญาตเข้าข่ายอะไร ?
+A. ละเมิดสิทธิส่วนบุคคล
+B. เสรีภาพในการแสดงออก
+C. การตลาดออนไลน์
+D. การโฆษณา"
+font_size = 25
+correct_answer = 0
+
+[node name="Note5" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0829525, 0.792318, -9.416071)
+note_text = "5.“นายเห็นไหม… ทุกโพสต์ของนายทิ้งรอยไว้”
+รอยที่เกิดจากการใช้สื่อดิจิทัลคืออะไร ?
+A. Digital Footprint
+B. Cookie
+C. Cache
+D. Password"
+font_size = 25
+correct_answer = 0
+
+[node name="Note6" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.9727678, 0, -0.23178199, 0, 1, 0, 0.23178199, 0, -0.9727678, 14.556999, 1.6560613, -10.256742)
+note_text = "6.“ใครบอกว่าส่งข่าวปลอมแค่ขำ ๆ ไม่ผิดกฎหมาย?”
+ข่าวปลอม (Fake News) ก่อให้เกิดผลอะไร ?
+1. สร้างความเข้าใจผิดและอาจมีโทษทางกฎหมาย
+2. ทำให้คนหัวเราะ
+3. เป็นการแชร์ข้อมูลทั่วไป
+4. ไม่มีผลอะไร"
+font_size = 25
+
+[node name="Note7" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.10876277, -3.8697912e-08, -0.99406755, -0.99406767, -4.8206243e-08, -0.10876274, -4.3711385e-08, 0.9999999, -4.3711374e-08, 7.493564, 2.556491, -15.812918)
+note_text = "7.“ถ้าอยากปลอดภัย… นายควรเริ่มจากรหัสผ่านของตัวเองก่อน”
+รหัสผ่านที่ดีควรมีลักษณะใด?
+1. มีทั้งตัวอักษร ตัวเลข และสัญลักษณ์
+2. ใช้ชื่อเล่น
+3. ใช้วันเกิด
+4. ใช้คำง่าย ๆ"
+font_size = 25
+
+[node name="Note8" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.70895535, 0, 0.70525295, 0, 1, 0, -0.70525295, 0, -0.70895535, 7.0996695, 0.520491, -16.880003)
+note_text = "8.“นายยังจำได้ไหม… นายใช้รหัสเดียวกันทุกบัญชี…”
+การใช้รหัสผ่านเดียวกันหลายบัญชีเสี่ยงเพราะอะไร?
+A. หากรหัสรั่ว บัญชีอื่นก็จะถูกแฮกได้
+B. จำง่าย
+C. ไม่ต้องพิมพ์บ่อย
+D. ไม่มีผลอะไร
+"
+font_size = 25
+correct_answer = 0
+
+[node name="Note9" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.8815752, 0, -0.472043, 0, 0.9999999, 0, 0.472043, 0, 0.8815752, 11.667807, 1.7846017, -20.427986)
+note_text = "9.“นายแชร์รูปคนอื่น… เพื่อแค่กดไลก์ ?”
+ การคัดลอกผลงานของผู้อื่นโดยไม่ได้รับอนุญาตคืออะไร?
+A. การละเมิดลิขสิทธิ์
+B. การรีวิว
+C. การตลาด
+D. การโพสต์ธรรมดา"
+font_size = 25
+correct_answer = 0
+
+[node name="Note10" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.7524723, 0, 0.65862364, 0, 1, 0, -0.65862364, 0, 0.7524723, 15.856209, 1.7846017, -22.004494)
+note_text = "10.“ข้อมูลส่วนตัวของนาย… มันมีค่ากว่าที่คิดนะ”
+ข้อใดคือข้อมูลส่วนบุคคล?
+A. หมายเลขบัตรประชาชน
+B. สีเสื้อที่ใส่วันนี้
+C. งานอดิเรก
+D. ของกินโปรด"
+font_size = 25
+correct_answer = 0
+
+[node name="Note11" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.9182668, 0, 0.39596224, 0, 1, 0, -0.39596224, 0, 0.9182668, 3.2692318, 0.53144264, -16.517826)
+note_text = "11.“บนโลกออนไลน์…การโพสต์อะไรโดยไม่คิดก่อนอาจทำให้เกิดผลใด ?”
+A. เสียชื่อเสียง
+B. ได้ยอดไลก์มากขึ้น
+C. คนเข้าใจผิดในทางดี
+D. ไม่มีอะไรเกิดขึ้น
+"
+font_size = 25
+correct_answer = 0
+
+[node name="Note12" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.6023305, 0, -0.7982466, 0, 1, 0, 0.7982466, 0, 0.6023305, 1.1005723, 0.014265895, -18.490381)
+note_text = "12.“นายคิดว่าการด่าคนในคอมเมนต์เป็นเรื่องปกติ ? ”
+การใช้คำพูดรุนแรงบนโลกออนไลน์เรียกว่าอะไร?
+A. Cyberbullying
+B. Debate
+C. Freedom of speech
+D. Chatting
+"
+font_size = 25
+correct_answer = 0
+
+[node name="Note13" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.9962566, 0, 0.086442836, 0, 0.9999999, 0, -0.086442836, 0, 0.9962566, -5.6153116, 1.0365436, -17.051851)
+note_text = "13.“นายเคยแชร์ข้อมูลของคนอื่นโดยไม่ได้ขออนุญาตหรือเปล่า ?”
+ควรทำอย่างไรก่อนแชร์เรื่องส่วนตัวของผู้อื่น?
+A. ขออนุญาตเจ้าของก่อน
+B. แชร์เลย
+C. ปลอมชื่อ
+D. ไม่จำเป็นต้องขอ"
+font_size = 25
+correct_answer = 0
+
+[node name="Note14" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.31558266, 5.5272203e-08, -0.9488976, 0.9488976, -2.768309e-08, -0.31558266, -4.3711367e-08, -0.9999999, -4.3711367e-08, 2.7083347, 3.7361662, -8.320025)
+note_text = "14.“ถ้ามีคนแอบปลอมเฟซบุ๊กนายล่ะ?”
+ ควรทำอย่างไรเมื่อเจอบัญชีปลอมใช้ชื่อเรา ?
+A. รายงาน (Report) ต่อแพลตฟอร์ม
+B. ด่ากลับ
+C. แชร์ต่อให้คนรู้
+D. ไม่สนใจ"
+font_size = 25
+correct_answer = 0
+
+[node name="Note15" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.90377647, 0, -0.42800465, 0, 1, 0, 0.42800465, 0, 0.90377647, 6.465846, 5.7887278, -4.9218407)
+note_text = "15.“โลกดิจิทัลมันจดจำได้ทุกคลิก…”
+อะไรคือสิ่งสำคัญที่สุดก่อนโพสต์บนออนไลน์?
+A. คิดก่อนโพสต์
+B. โพสต์ให้ไว
+C. ทำให้ไวรัล
+D. ไม่คิดก็ไม่เป็นไร"
+font_size = 25
+correct_answer = 0
+
+[node name="Note16" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 0.9999999, 5.85, 6.629, -2.546)
+note_text = "16.“นายคิดว่าคอมเมนต์ที่นายเขียน… ไม่มีใครเห็น?”
+การกลั่นแกล้งออนไลน์ส่งผลต่อผู้ถูกกระทำอย่างไร?
+A. เครียด กังวล และอาจทำร้ายตนเอง
+B. ขำ ๆ
+C. ไม่มีผลจริงจัง
+D. เป็นเรื่องธรรมดา"
+font_size = 25
+correct_answer = 0
+
+[node name="Note17" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.70334506, 0, -0.71084857, 0, 1, 0, 0.71084857, 0, 0.70334506, 9.527386, 5.4943027, -1.9071916)
+note_text = "17.“นายรู้ไหม… การบันทึกภาพคนอื่นในที่ส่วนตัวอาจผิด?”
+ การถ่ายรูปในที่ส่วนตัวโดยไม่ได้รับอนุญาตเข้าข่ายอะไร?
+A. ละเมิดสิทธิส่วนบุคคล
+B. เสรีภาพสื่อ
+C. การบันทึกสาธารณะ
+D. ไม่มีปัญหา"
+font_size = 25
+correct_answer = 0
+
+[node name="Note18" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.7524723, 0, 0.65862364, 0, 1, 0, -0.65862364, 0, 0.7524723, 12.447506, 4.6730013, -12.481401)
+note_text = "18.“ถ้านายเห็นเพื่อนโดน Cyberbully… นายจะทำยังไง?”
+สิ่งที่ควรทำคืออะไร?
+A. ช่วยรายงานหรือให้กำลังใจ
+B. แชร์ต่อ
+C. ไม่ยุ่ง
+D. เขียนแซวเพิ่ม"
+font_size = 25
+
+[node name="Note19" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.9533119, 0, 0.3019872, 0, 1, 0, -0.3019872, 0, 0.9533119, 12.766139, 5.7887278, -23.179987)
+note_text = "19.“นายคิดว่าข่าวที่แชร์ในกลุ่ม LINE ทุกอันเชื่อได้ไหม?”
+ก่อนแชร์ข่าวควรทำอย่างไร?
+A. ตรวจสอบแหล่งที่มา
+B. แชร์ก่อนคิดทีหลัง
+C. ถามเพื่อน
+D. ส่งต่อเพราะเห็นว่าดี"
+font_size = 25
+
+[node name="Note20" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.9533119, 0, 0.3019872, 0, 1, 0, -0.3019872, 0, 0.9533119, -5.8821115, 5.793078, -7.638394)
+note_text = "20.“นายเคยใช้ Wi-Fi ฟรีตามร้านกาแฟไหม?”
+ควรหลีกเลี่ยงการทำอะไรขณะใช้ Wi-Fi สาธารณะ?
+A. เข้าธนาคารหรือเว็บที่มีข้อมูลสำคัญ
+B. ดู YouTube
+C. อ่านข่าว
+D. ฟังเพลง
+"
+font_size = 25
+
+[node name="Note21" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.06432329, 4.0809198e-08, -0.99792886, 0.997929, -4.643252e-08, 0.06432329, -4.371138e-08, -0.9999999, -4.3711374e-08, 3.4405808, 6.655394, -13.127947)
+note_text = "21.“นายเคยเปิดกล้องตอนคุยกับคนแปลกหน้าไหม?”
+ควรระวังอะไรเมื่อวิดีโอคอลกับคนที่ไม่รู้จัก?
+A. อาจถูกบันทึกและนำไปเผยแพร่
+B. แค่คุยเล่น ๆ
+C. ไม่มีปัญหา
+D. ปิดกล้องไม่ได้"
+font_size = 25
+
+[node name="Note22" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1.9106853e-15, 4.3711385e-08, -0.9999998, 0.9999999, -4.3711385e-08, 0, -4.3711385e-08, -0.9999999, -4.371138e-08, 1.1697927, 6.555743, -15.454876)
+note_text = "22.“นายรู้ไหม… เกมบางเกมก็ขอเข้าถึงข้อมูลในเครื่องนาย”
+ก่อนติดตั้งแอปควรทำอย่างไร?
+A. อ่านสิทธิ์การเข้าถึง (Permissions) ก่อน
+B. ติดตั้งเลย
+C. ขอให้เพื่อนลอง
+D. เปิดทุกอย่างไว้ก่อน"
+font_size = 25
+
+[node name="Note23" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.76920986, 0, -0.63899595, 0, 0.9999999, 0, 0.638996, 0, 0.76920986, 1.1668286, 4.6698275, -19.38695)
+note_text = "23.“นายแชร์พิกัดบ้านตัวเองไว้ในโพสต์… ฉันเลยรู้ว่าต้องไปที่ไหน”
+การโพสต์พิกัดส่วนตัวมีความเสี่ยงอะไร?
+A. เสี่ยงถูกสะกดรอยหรือลักทรัพย์
+B. ไม่มีผล
+C. เพิ่มยอดวิว
+D. ทำให้คนรู้จัก
+"
+font_size = 25
+correct_answer = 0
+
+[node name="Note24" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.2405329, 0, -0.970641, 0, 1, 0, 0.970641, 0, -0.2405329, 15.219408, 0.89654803, -40.91163)
+note_text = "24.“นายเคยตั้งรหัสผ่านง่าย ๆ ว่า 123456 ไหม?”
+รหัสผ่านแบบนี้เรียกว่าอะไร?
+A. รหัสผ่านที่อ่อนแอ (Weak Password)
+B. รหัสลับสุดยอด
+C. รหัสปลอดภัย
+D. ไม่มีปัญหา
+"
+font_size = 25
+
+[node name="Note25" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.62326545, 0, -0.78201, 0, 1, 0, 0.78201, 0, 0.62326545, 6.812843, 0.57873964, -21.472803)
+note_text = "25.“บางครั้งสิ่งที่นายโพสต์… มันอาจทำร้ายคนอื่นโดยไม่รู้ตัว”
+ก่อนโพสต์ความคิดเห็น ควรคิดถึงอะไร?
+A. ผลกระทบต่อผู้อื่น
+B. ยอดไลก์
+C. ความไวรัล
+D. จำนวนแชร์"
+font_size = 25
+
+[node name="Note26" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.6337858, 0, 0.7735082, 0, 1, 0, -0.77350825, 0, 0.6337857, -11.6654215, -0.0043026805, -24.409674)
+note_text = "26.“นายรู้ไหมว่าการโหลดหนังเถื่อน… ก็คือการขโมยอย่างหนึ่ง”
+การดาวน์โหลดไฟล์ละเมิดลิขสิทธิ์เข้าข่ายอะไร?
+A. ผิดกฎหมายลิขสิทธิ์
+B. แค่แชร์เฉย ๆ
+C. ปกติของอินเทอร์เน็ต
+D. ไม่เป็นไรถ้าไม่ขาย
+"
+font_size = 25
+
+[node name="Note27" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(-0.8246495, 0, -0.5656435, 0, 1, 0, 0.5656435, 0, -0.8246495, 4.5364394, 0.53507656, -25.767574)
+note_text = "27.“นายเคยกรอกข้อมูลบัตรเครดิตในเว็บแปลก ๆ หรือเปล่า?”
+ก่อนกรอกข้อมูลสำคัญควรดูอะไร?
+A. สัญลักษณ์แม่กุญแจ HTTPS
+B. สีเว็บสวยไหม
+C. มีโฆษณาไหม
+D. มีเพื่อนแชร์ไหม"
+font_size = 25
+
+[node name="Note28" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.46080297, 0.0080588525, 0.19389604, 0, 0.4995687, -0.020763448, -0.19406344, 0.019135717, 0.4604055, 9.199994, 1.6150672, -8.953655)
+note_story = true
+note_text = "แกไม่รอดแน่"
+font_size = 25
+correct_answer = 0
+
+[node name="Battery" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.7753304, 0, 0.6315558, 0, 1, 0, -0.6315558, 0, 0.7753304, -6.3219795, 1.060289, -19.345947)
+
+[node name="Battery2" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.95013005, 0, 0.31185406, 0, 1, 0, -0.31185406, 0, 0.95013005, -6.3219795, 1.060289, -19.19934)
+
+[node name="Battery3" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.8054948, 0, 0.5926043, 0, 1, 0, -0.5926043, 0, 0.8054948, 3.5163708, 1.008079, -18.837673)
+
+[node name="Battery4" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.9501308, 0, 0.31185433, 0, 1, 0, -0.31185433, 0, 0.9501308, 7.5668745, 0.5655056, -17.320963)
+
+[node name="Battery5" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.49471608, 0, 0.8690557, 0, 1, 0, -0.8690557, 0, 0.49471608, 7.7921963, 0.5655056, -17.320963)
+
+[node name="Battery6" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.70740354, 0, 0.70681113, 0, 1, 0, -0.70681113, 0, 0.70740354, 11.88232, 0.5655056, -7.28012)
+
+[node name="Battery7" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.70740354, 0, 0.70681113, 0, 1, 0, -0.70681113, 0, 0.70740354, 6.98456, 4.7726264, -7.383833)
+
+[node name="Battery8" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(-0.8668174, -0.09514406, 0.4894641, -0.011278823, 0.9851166, 0.17151682, -0.49849802, 0.14315319, -0.8549894, 2.8964393, 2.6469946, -8.50354)
+
+[node name="Battery9" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.7074036, -7.450581e-09, 0.70681113, 0, 1, -3.7252903e-09, -0.7068112, 0, 0.7074036, 6.51552, 4.767303, -0.036524057)
+
+[node name="Battery10" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.7074036, -7.450581e-09, 0.70681113, 0, 1, -3.7252903e-09, -0.7068112, 0, 0.7074036, 9.882695, 0.6185238, 0.18948328)
+
+[node name="Battery11" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(-0.78102005, 8.276646e-10, 0.6245075, 0, 1, -3.7252903e-09, -0.6245074, 7.404466e-09, -0.7810199, 11.791862, 0.6185238, -1.006003)
+
+[node name="Photography" parent="." groups=["Pickupable"] instance=ExtResource("9_4bh3e")]
+transform = Transform3D(0.44992328, -0.008309041, 0, 0.008309041, 0.44992328, 0, 0, 0, 0.45, 7.0011106, 2.4552872, -6.447181)
+picture_texture = ExtResource("10_4bh3e")
+
+[node name="Photography3" parent="." instance=ExtResource("9_4bh3e")]
+transform = Transform3D(-0.39006782, -0.04281483, 0.22025885, -0.00507547, 0.44330245, 0.07718257, -0.2243241, 0.064418934, -0.3847452, 2.8964393, 3.2708251, -8.754313)
+picture_texture = ExtResource("11_q41ih")
+
+[node name="Photography2" parent="." groups=["Pickupable"] instance=ExtResource("9_4bh3e")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 7.449323, 2.4580135, -15.773146)
+picture_texture = ExtResource("10_ywl1d")
+
+[node name="TestSphere" parent="." instance=ExtResource("3_kqf6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.045333, 0.30491722, 6.3134575)
+
+[node name="TestCube" parent="." instance=ExtResource("4_e41yp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7208047, 0.28946358, 1.7963303)
+
+[node name="Test" type="RigidBody3D" parent="." groups=["Pickupable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6059885, 1.5614146, -3.3287592)
+physics_material_override = SubResource("PhysicsMaterial_ywl1d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = SubResource("BoxMesh_ywl1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+shape = SubResource("BoxShape3D_q41ih")
+
+[node name="Door" parent="." instance=ExtResource("12_evdw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.95, -3.3320847, 1.2276429, 3.9435954)
+
+[node name="Door2" parent="." instance=ExtResource("12_evdw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.95, -3.421445, 1.2276429, 5.6092186)
+
+[node name="task_trigger" parent="." instance=ExtResource("14_555yr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4047685, 1.1054726, -5.0276966)
+task_text = "ยินดีต้อนรับ"
+
+[node name="task_trigger2" parent="." instance=ExtResource("14_555yr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.606764, 1.1054726, -5.0276966)
+task_text = "ทุกคำตอบของนายจะมีราคาของมัน"
+
+[node name="FloorButton_standard" parent="." node_paths=PackedStringArray("toggle_to") instance=ExtResource("12_q41ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8419375, -0.086982906, 3.9326725)
+toggle_to = NodePath("../Door")
+
+[node name="FloorButton_C_Lock" parent="." node_paths=PackedStringArray("toggle_to") instance=ExtResource("15_tu0td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8129596, -0.06110683, 5.9346614)
+toggle_to = NodePath("../Door2")
+
+[node name="PatrolPoints" type="Node3D" parent="."]
+
+[node name="point1" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3347387, 0, 0.2125535)
+
+[node name="point2" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.360956, 0.5257418, -29.286606)
+
+[node name="point3" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.889958, 0.5428561, -21.54383)
+
+[node name="point4" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.559947, 0.5843954, -11.313149)
+
+[node name="point5" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.923385, 3.0051544, -11.974333)
+
+[node name="point6" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.497565, 4.8734207, -9.351343)
+
+[node name="point7" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.392196, 4.867928, -17.800783)
+
+[node name="point8" type="Marker3D" parent="PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.392196, 4.867928, -5.3915596)
+
+[node name="rabbitNPC" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("16_5jovg")]
+transform = Transform3D(-0.14500001, 0, -1.2676304e-08, 0, 0.14500001, 0, 1.2676304e-08, 0, -0.14500001, 11.728395, 0.7904973, -14.107743)
+patrol_points = [NodePath("../PatrolPoints/point1"), NodePath("../PatrolPoints/point2"), NodePath("../PatrolPoints/point3"), NodePath("../PatrolPoints/point4"), NodePath("../PatrolPoints/point5"), NodePath("../PatrolPoints/point6"), NodePath("../PatrolPoints/point7"), NodePath("../PatrolPoints/point8"), null]
+speed_walk = 2.0
+attack_range = 0.0
+investigate_wait_time = 2.0
+patrol_wait_time = 0.5

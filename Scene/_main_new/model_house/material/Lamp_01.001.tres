@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bw60arqw60sm8"]
+
+[ext_resource type="Texture2D" uid="uid://5h7huqyp2g6q" path="res://Scene/_main_s/model_house/tex/house_Lamp_01-Lamp_01.png" id="1_i3qnw"]
+
+[resource]
+resource_name = "Lamp_01.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_i3qnw")

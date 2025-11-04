@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdq5p6gje854g"]
+
+[ext_resource type="Texture2D" uid="uid://balux745radef" path="res://Scene/_main_s/model_house/tex/house_Plaster.jpg" id="1_s3cwl"]
+
+[resource]
+resource_name = "Plaster_02.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_s3cwl")

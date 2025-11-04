@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clyb6tev7tccj"]
+
+[ext_resource type="Texture2D" uid="uid://brgedaetrospa" path="res://Scene/_main_s/model_house/tex/house_WoodPlanks.jpg" id="1_n2sfd"]
+
+[resource]
+resource_name = "WoodPlanks.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_n2sfd")

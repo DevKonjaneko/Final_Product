@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8t61p7efs7aq"]
+
+[ext_resource type="Texture2D" uid="uid://cv4onlnnig6ie" path="res://Scene/_main_s/model_house/tex/house_Wood_06.jpg" id="1_y0arv"]
+
+[resource]
+resource_name = "Wood_06.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_y0arv")

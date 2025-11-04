@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://wvj4o5umh82g"]
+
+[ext_resource type="Texture2D" uid="uid://cbw30u8f0v8k3" path="res://Scene/_main_s/model_house/tex/house_Gadgets.png" id="1_x758p"]
+
+[resource]
+resource_name = "Gadgets.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_x758p")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtnwdf8g1eh3s"]
+
+[ext_resource type="Texture2D" uid="uid://bxuw2dlgu701t" path="res://Scene/_main_s/model_house/tex/house_pctower.jpg" id="1_sxolf"]
+
+[resource]
+resource_name = "Material.093"
+cull_mode = 2
+albedo_texture = ExtResource("1_sxolf")
+roughness = 0.39999998

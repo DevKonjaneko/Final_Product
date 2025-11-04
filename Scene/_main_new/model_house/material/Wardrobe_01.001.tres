@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bet2l75ebhh2h"]
+
+[ext_resource type="Texture2D" uid="uid://csaob5e2b61ah" path="res://Scene/_main_s/model_house/tex/house_Wardrobe_01.png" id="1_geby3"]
+
+[resource]
+resource_name = "Wardrobe_01.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_geby3")

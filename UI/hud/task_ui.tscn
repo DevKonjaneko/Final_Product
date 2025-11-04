@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp5q7p76jwn7a"]
+
+[ext_resource type="Script" uid="uid://iay1tae1y6ly" path="res://UI/hud/task_ui.gd" id="1_5gb6f"]
+[ext_resource type="Theme" uid="uid://oyxfhfd21ruc" path="res://Resources/team & stylebox/label2.tres" id="2_p0lmq"]
+
+[node name="task_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5gb6f")
+
+[node name="TaskTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -285.31
+offset_top = 120.0
+offset_right = -15.309998
+offset_bottom = 246.99991
+grow_horizontal = 0
+mouse_filter = 2
+theme = ExtResource("2_p0lmq")
+theme_override_font_sizes/normal_font_size = 25
+text = "Take:"
+
+[node name="DescriptionTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -688.0
+offset_top = 149.0
+offset_right = -232.0
+offset_bottom = 241.0
+grow_horizontal = 0
+mouse_filter = 2
+theme = ExtResource("2_p0lmq")
+theme_override_font_sizes/normal_font_size = 25
+text = "Sample text for task"
+text_direction = 2
+
+[node name="DescriptionTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -688.0
+offset_top = 185.5
+offset_right = -232.0
+offset_bottom = 277.50018
+grow_horizontal = 0
+mouse_filter = 2
+theme = ExtResource("2_p0lmq")
+theme_override_font_sizes/normal_font_size = 25
+text = "Process"
+text_direction = 2

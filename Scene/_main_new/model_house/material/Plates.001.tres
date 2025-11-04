@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqk4ic7th823k"]
+
+[ext_resource type="Texture2D" uid="uid://2dck3gdt44ym" path="res://Scene/_main_s/model_house/tex/house_Plates-Plates.png" id="1_riym6"]
+
+[resource]
+resource_name = "Plates.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_riym6")

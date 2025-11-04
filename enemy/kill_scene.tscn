@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjbclylsiwt84"]
+
+[ext_resource type="Script" uid="uid://cnqc61e6kyhg7" path="res://enemy/kill_scene.gd" id="1_mhcpd"]
+[ext_resource type="PackedScene" uid="uid://cjyurjh0tgp7w" path="res://enemy/rabbitNPC.glb" id="2_c5nq0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fffh0"]
+sky_top_color = Color(0.360784, 0.466667, 0.517647, 1)
+sky_horizon_color = Color(0.634314, 0.658823, 0.685294, 1)
+ground_bottom_color = Color(0.176471, 0.168627, 0.223529, 1)
+ground_horizon_color = Color(0.634314, 0.658823, 0.685294, 1)
+
+[sub_resource type="Sky" id="Sky_q225k"]
+sky_material = SubResource("ProceduralSkyMaterial_fffh0")
+
+[sub_resource type="Environment" id="Environment_ua8sv"]
+background_mode = 1
+sky = SubResource("Sky_q225k")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_llek3"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_7xfea"]
+resource_name = "chase"
+length = 3.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2oh8"]
+_data = {
+&"RESET": SubResource("Animation_llek3"),
+&"chase": SubResource("Animation_7xfea")
+}
+
+[node name="killScene" type="Node"]
+script = ExtResource("1_mhcpd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ua8sv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+current = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="KilsceneAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u2oh8")
+}
+autoplay = "chase"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -8.83
+autoplay = true
+
+[node name="rabbitNPC" parent="." instance=ExtResource("2_c5nq0")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, -0.7362021, 0.71298665)
+
+[connection signal="animation_finished" from="KilsceneAnimationPlayer" to="." method="_on_kilscene_animation_player_animation_finished"]

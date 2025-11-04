@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://mxtwq8vk7vkb"]
+
+[ext_resource type="Texture2D" uid="uid://i4fo8cyg18px" path="res://Scene/_main_s/model_house/tex/house_Hygiene.jpg" id="1_dosnc"]
+
+[resource]
+resource_name = "Hygiene.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_dosnc")

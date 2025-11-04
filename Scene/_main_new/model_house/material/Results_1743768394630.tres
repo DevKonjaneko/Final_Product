@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cr34mkqj5yqev"]
+
+[ext_resource type="Texture2D" uid="uid://bt8syv3pw7vu1" path="res://Scene/_main_s/model_house/tex/house_keyboard2.jpg" id="1_tbkmp"]
+
+[resource]
+resource_name = "Results_1743768394630"
+cull_mode = 2
+albedo_texture = ExtResource("1_tbkmp")
+roughness = 0.39999998

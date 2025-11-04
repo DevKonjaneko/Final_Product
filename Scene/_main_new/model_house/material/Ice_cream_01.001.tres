@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7kcwicaebi7y"]
+
+[ext_resource type="Texture2D" uid="uid://hrbrc3168v5a" path="res://Scene/_main_s/model_house/tex/house_Ice_cream_01-Ice_cream_01.png" id="1_bv05a"]
+
+[resource]
+resource_name = "Ice_cream_01.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_bv05a")
