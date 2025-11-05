@@ -1,7 +1,7 @@
 extends CharacterBody3D
  
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var anim: AnimationPlayer = $metarig_001
 @onready var vision_ray: RayCast3D = $VisionRay
 @onready var vision_ray_left: RayCast3D = $VisionRay2
 @onready var vision_ray_right: RayCast3D = $VisionRay3
@@ -16,9 +16,18 @@ extends CharacterBody3D
 @export var investigate_wait_time: float = 4.0
 @export var patrol_wait_time: float = 3.0
 @export var update_interval: float = 0.2
+
+@onready var alert_sfx: = $AlertSFX
+@onready var chase_sfx: = $ChaseSFX
+
  
 const VIEW_ANGLE: float = 190.0
 const SMOOTHING_FACTOR = 0.2
+
+
+
+
+
  
 # --------------------
 # STATE MACHINE
@@ -34,6 +43,7 @@ var return_position: Vector3
 var target: Node3D
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var update_timer := 0.0
+
  
 # --------------------
 # READY
@@ -102,7 +112,7 @@ func _state_investigate(delta: float) -> void:
 	if _can_see_player():
 		_enter_state(State.CHASE)
  
-func _state_chase(delta: float) -> void:
+func _state_chase(_delta: float) -> void:
 	if not target:
 		_enter_state(State.RETURN)
 		return
@@ -134,7 +144,15 @@ func _state_return(delta: float) -> void:
 # HELPERS
 # --------------------
 func _enter_state(new_state: State) -> void:
+	var prev_state = state
 	state = new_state
+
+	# ถ้าออกจาก CHASE ให้หยุดเสียงไล่ล่า
+	if prev_state == State.CHASE and state != State.CHASE:
+		if chase_sfx and chase_sfx.playing:
+			chase_sfx.stop()
+		
+
 	match state:
 		State.PATROL:
 			patrol_timer = 0
@@ -142,7 +160,22 @@ func _enter_state(new_state: State) -> void:
 		State.INVESTIGATE:
 			investigate_timer = 0.0
 			agent.set_target_position(investigate_position)
-		State.CHASE, State.INVESTIGATE:
+		State.CHASE:
+			# บันทึกตำแหน่งกลับ (ใช้ใน RETURN)
+			return_position = global_transform.origin
+
+			# เล่นเสียงเตือนแค่ครั้งเดียวเมื่อเพิ่งเปลี่ยนเป็น CHASE
+			if alert_sfx and not alert_sfx.playing:
+				alert_sfx.play()
+
+			# เริ่มเสียงไล่ล่า (loop) — ถ้ายังไม่เล่น
+			if chase_sfx and not chase_sfx.playing:
+				chase_sfx.play()
+				
+		
+
+		State.INVESTIGATE, State.CHASE:
+			# ถ้าต้องการ return_position ก็เก็บไว้
 			return_position = global_transform.origin
  
 func _update_agent_target() -> void:
@@ -201,6 +234,8 @@ func _apply_gravity(delta: float) -> void:
 # --------------------
 # VISION
 # --------------------
+
+
 func _can_see_player() -> bool:
 	return target and vision_ray.is_colliding() and vision_ray.get_collider() == target
 	
@@ -235,7 +270,8 @@ func hear_noise(pos: Vector3) -> void:
 		
 func _on_kil_player_body_entered(body: Node) -> void:
 	
-	if body.is_in_group("Player"):
+	#if body.is_in_group("PlayerBody"):
+	if body is player:
 	
 		globalsetting.lastSceneOnJumpscare = get_tree().current_scene.scene_file_path
 

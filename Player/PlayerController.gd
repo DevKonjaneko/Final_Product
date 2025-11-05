@@ -1,5 +1,5 @@
 extends CharacterBody3D
-#class_name CharacterBody3D
+class_name player
 # Health
 @export var health: float = 100.0
 @export var max_health: float = 100.0

@@ -759,6 +759,7 @@ libraries = {
 
 [node name="note_ui_story" type="Control" parent="player_ui/PlayerUI"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

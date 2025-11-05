@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bwih8ejk5lx73" path="res://Textures/pictures/Screenshot 2025-10-30 183850.png" id="10_ywl1d"]
 [ext_resource type="Texture2D" uid="uid://djj38f6idwtcx" path="res://Textures/pictures/image3.png" id="11_q41ih"]
 [ext_resource type="PackedScene" uid="uid://ce6px0mhvkp2e" path="res://Scene/note_s/task_trigger.tscn" id="14_555yr"]
-[ext_resource type="PackedScene" uid="uid://boej7p4abrep2" path="res://enemy/enemy.tscn" id="16_5jovg"]
+[ext_resource type="PackedScene" uid="uid://b55wmljlivusu" path="res://enemy/enemy.tscn" id="16_5jovg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdm7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -564,7 +564,7 @@ transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 7.449323, 2.4580135,
 picture_texture = ExtResource("10_ywl1d")
 
 [node name="task_trigger" parent="." instance=ExtResource("14_555yr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4047685, 1.1054726, -5.0276966)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.206392, 1.6083317, -4.914834)
 task_text = "ยินดีต้อนรับ"
 
 [node name="task_trigger2" parent="." instance=ExtResource("14_555yr")]
@@ -580,7 +580,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3347387, 0, 0.2125535)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.360956, 0.5257418, -29.286606)
 
 [node name="point3" type="Marker3D" parent="PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.889958, 0.5428561, -21.54383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.111643, 0.5428561, -22.33918)
 
 [node name="point4" type="Marker3D" parent="PatrolPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.559947, 0.5843954, -11.313149)
@@ -599,11 +599,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.392196, 4.867928, -5.391559
 
 [node name="rabbitNPC" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("16_5jovg")]
 transform = Transform3D(-0.14500001, 0, -1.2676304e-08, 0, 0.14500001, 0, 1.2676304e-08, 0, -0.14500001, 11.728395, 0.7904973, -14.107743)
-patrol_points = [NodePath("../PatrolPoints/point1"), NodePath("../PatrolPoints/point2"), NodePath("../PatrolPoints/point3"), NodePath("../PatrolPoints/point4"), NodePath("../PatrolPoints/point5"), NodePath("../PatrolPoints/point6"), NodePath("../PatrolPoints/point7"), NodePath("../PatrolPoints/point8"), null]
-speed_walk = 2.0
-attack_range = 0.0
-investigate_wait_time = 2.0
-patrol_wait_time = 0.5
+patrol_points = [NodePath("../PatrolPoints/point1"), NodePath("../PatrolPoints/point2"), NodePath("../PatrolPoints/point3"), NodePath("../PatrolPoints/point4"), NodePath("../PatrolPoints/point5"), NodePath("../PatrolPoints/point6"), NodePath("../PatrolPoints/point7"), NodePath("../PatrolPoints/point8")]
 
 [node name="TestCube2" parent="." instance=ExtResource("4_e41yp")]
 transform = Transform3D(0.7431097, 0, 0.6691696, 0, 1, 0, -0.6691696, 0, 0.7431097, 13.747711, 5.1130395, -8.073295)
