@@ -59,7 +59,7 @@ directional_shadow_blend_splits = true
 transform = Transform3D(1.7499998, 0, 0, 0, 1.2499998, 0, 0, 0, 1.7499998, 0.007941961, 2.3841858e-07, -2.0742416e-05)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_csiqh")]
-transform = Transform3D(0.9734711, 0, -0.22880968, 0, 1, 0, 0.22880968, 0, 0.9734711, 0.059510827, 0.833277, 10.612832)
+transform = Transform3D(0.9734711, 0, -0.22880968, 0, 1, 0, 0.22880968, 0, 0.9734711, 9.047616, 5.7513456, -17.207176)
 
 [node name="Note_S1" parent="." instance=ExtResource("3_mbwnc")]
 transform = Transform3D(0.46080297, 0.0080588525, 0.19389604, 0, 0.4995687, -0.020763448, -0.19406344, 0.019135717, 0.4604055, 9.199994, 1.6150672, -8.953655)
